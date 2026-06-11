@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>門徒培育與會籍規範</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+:root{
+  --ink:#23302c; --ink2:#4a5a54; --paper:#f5f1e8; --paper2:#fbf8f1;
+  --pine:#1f3d36; --pine-soft:#2d544b; --gold:#b8893a; --gold-soft:#d9b873;
+  --cream:#f3ead6; --line:#d9d0bd; --neutral:#6b6354;
+  --c1:#3b5a78; --c2:#2d6a4f; --c3:#8a6d3b; --c4:#7a5a8c; --c5:#9c5a42;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Noto Sans TC',sans-serif; color:var(--ink); line-height:1.72;
+  background:
+    radial-gradient(1100px 560px at 85% -8%, rgba(184,137,58,.11), transparent 60%),
+    radial-gradient(820px 460px at -8% 108%, rgba(31,61,54,.10), transparent 55%),
+    var(--paper);
+  padding:44px 18px 80px;
+}
+.wrap{max-width:780px; margin:0 auto;}
+
+.hero{text-align:center; margin-bottom:34px;}
+.eyebrow{font-size:.76rem; letter-spacing:.38em; color:var(--gold); text-transform:uppercase; font-weight:700; margin:0 0 12px;}
+h1{font-family:'Noto Serif TC',serif; font-weight:900; font-size:2.4rem; color:var(--pine); margin:0 0 14px; letter-spacing:.03em;}
+.hero .lead{font-size:1.06rem; color:var(--ink2); font-family:'Noto Serif TC',serif; max-width:46ch; margin:0 auto;}
+.verse{font-size:.85rem; color:var(--neutral); margin-top:14px; font-style:italic;}
+
+/* opening frame */
+.frame{background:linear-gradient(135deg,var(--pine),var(--pine-soft)); color:var(--cream); border-radius:16px; padding:24px 30px; margin:0 0 36px;}
+.frame p{margin:0; font-size:1rem; line-height:1.78; color:var(--cream);}
+.frame b{color:#fff;}
+
+/* foundation: baptism */
+.foundation{background:var(--cream); border:1px solid var(--gold-soft); border-radius:14px; padding:20px 26px; margin:0 0 18px; display:flex; gap:18px; align-items:center;}
+.foundation .fi{font-family:'Noto Serif TC',serif; font-weight:900; color:var(--gold); font-size:1.3rem; flex:none;}
+.foundation .ft b{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.1rem; display:block; margin-bottom:3px;}
+.foundation .ft span{font-size:.9rem; color:var(--ink2);}
+
+/* section header */
+.sec-h{text-align:center; margin:38px 0 8px;}
+.sec-h h2{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.6rem; margin:0;}
+.sec-h p{font-size:.9rem; color:var(--ink2); margin:6px 0 0;}
+
+/* legend for principle vs standard */
+.howto{background:var(--paper2); border:1px solid var(--line); border-radius:12px; padding:14px 20px; margin:18px 0 24px; font-size:.86rem; color:var(--ink2); text-align:center; line-height:1.7;}
+.howto b{color:var(--pine);}
+.howto .pill{display:inline-block; font-size:.76rem; background:var(--cream); color:var(--gold); padding:2px 10px; border-radius:6px; font-weight:700; border:1px solid var(--gold-soft);}
+
+/* five-fold cards */
+.fivefold{display:flex; flex-direction:column; gap:16px;}
+.fold{background:var(--paper2); border:1px solid var(--line); border-radius:15px; overflow:hidden; display:flex;}
+.fold .band{width:8px; flex:none;}
+.fold.f1 .band{background:var(--c1);} .fold.f2 .band{background:var(--c2);}
+.fold.f3 .band{background:var(--c3);} .fold.f4 .band{background:var(--c4);} .fold.f5 .band{background:var(--c5);}
+.fold .body{padding:20px 24px; flex:1;}
+.fold .top{display:flex; align-items:baseline; gap:12px; margin-bottom:8px;}
+.fold .num{font-family:'Noto Serif TC',serif; font-weight:900; font-size:1.05rem; color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:none;}
+.fold.f1 .num{background:var(--c1);} .fold.f2 .num{background:var(--c2);}
+.fold.f3 .num{background:var(--c3);} .fold.f4 .num{background:var(--c4);} .fold.f5 .num{background:var(--c5);}
+.fold h3{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.26rem; margin:0;}
+.fold .sub-en{font-size:.74rem; color:var(--neutral); letter-spacing:.1em; margin-left:auto; align-self:center;}
+.fold .principle{font-size:.96rem; color:var(--ink); margin:0 0 12px; line-height:1.7;}
+.fold .std{background:#fff; border-radius:9px; padding:10px 14px; display:flex; gap:10px; align-items:flex-start;}
+.fold .std .stag{font-size:.72rem; background:var(--cream); color:var(--gold); padding:2px 9px; border-radius:6px; font-weight:700; border:1px solid var(--gold-soft); white-space:nowrap; flex:none; margin-top:2px;}
+.fold .std .stxt{font-size:.86rem; color:var(--ink2); line-height:1.6;}
+
+/* discipleship ladder (brief) */
+.ladder{background:#fff; border:1px solid var(--line); border-radius:15px; padding:24px 28px; margin:34px 0 0;}
+.ladder h3{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.3rem; margin:0 0 4px; text-align:center;}
+.ladder .lsub{text-align:center; font-size:.88rem; color:var(--ink2); margin:0 0 20px;}
+.lsteps{display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap;}
+.lstep{text-align:center; padding:12px 18px; position:relative;}
+.lstep .ln{font-family:'Noto Serif TC',serif; font-weight:900; color:var(--pine); font-size:1.02rem;}
+.lstep .ld{font-size:.78rem; color:var(--ink2); margin-top:3px;}
+.lstep .arr{position:absolute; right:-8px; top:50%; transform:translateY(-50%); color:var(--gold); font-weight:700; font-size:1.1rem;}
+.lstep:last-child .arr{display:none;}
+.lstep.last .ln{color:var(--gold);}
+.ladder .lnote{text-align:center; font-size:.85rem; color:var(--ink2); margin:18px 0 0; padding-top:16px; border-top:1px dashed var(--line);}
+.ladder .lnote b{color:var(--pine);}
+
+/* mutual commitment */
+.mutual{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:34px 0 0;}
+.mcol{border-radius:14px; padding:22px 24px;}
+.mcol.church{background:linear-gradient(150deg,var(--pine),var(--pine-soft)); color:var(--cream);}
+.mcol.member{background:var(--cream); border:1px solid var(--gold-soft);}
+.mcol h4{font-family:'Noto Serif TC',serif; font-size:1.15rem; margin:0 0 12px;}
+.mcol.church h4{color:#fff;} .mcol.member h4{color:var(--pine);}
+.mcol ul{margin:0; padding-left:18px;}
+.mcol li{font-size:.9rem; margin:7px 0; line-height:1.55;}
+.mcol.church li{color:#e8dfca;} .mcol.member li{color:var(--ink2);}
+
+/* elsewhere note */
+.elsewhere{background:var(--paper2); border:1px solid var(--line); border-radius:12px; padding:18px 24px; margin:34px 0 0; font-size:.86rem; color:var(--ink2); text-align:center; line-height:1.75;}
+.elsewhere b{color:var(--pine);}
+
+.closing{text-align:center; margin:36px 0 0;}
+.closing p{font-family:'Noto Serif TC',serif; font-size:1.12rem; color:var(--pine); margin:0;}
+.closing .cv{font-size:.84rem; color:var(--neutral); font-style:italic; margin-top:8px;}
+
+.foot{text-align:center; font-size:.74rem; color:var(--neutral); margin-top:38px; letter-spacing:.05em;}
+
+@media print{
+  body{background:#fff; padding:0;}
+  .frame,.foundation,.fold .band,.fold .num,.ladder,.mcol.church,.mcol.member,.frame p{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .fivefold,.ladder,.mutual{break-inside:avoid;} .fold{break-inside:avoid;}
+}
+@media(max-width:640px){
+  .mutual{grid-template-columns:1fr;}
+  h1{font-size:1.85rem;}
+  .fold .sub-en{display:none;}
+  .lstep .arr{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">飛航事工 · 門徒生活</p>
+    <h1>門徒培育與會籍規範</h1>
+    <p class="lead">作主的門徒，是一條委身與成長的道路。<br>這份規範，描繪我們一同走在其中的樣式。</p>
+    <p class="verse">「你們若常常遵守我的道，就真是我的門徒了。」約 8:31</p>
+  </div>
+
+  <div class="frame">
+    <p>成為門徒，不是達成一張清單，而是<b>進入一段與神、與教會家人同行的生命關係</b>。<br>
+    以下的委身基準，不是要衡量你夠不夠格，而是幫助我們每一個人，在愛中扎根、在群體中成長、在恩典裡持續前行。</p>
+  </div>
+
+  <!-- foundation -->
+  <div class="foundation">
+    <span class="fi">✝</span>
+    <div class="ft">
+      <b>根基：重生得救、受洗歸主</b>
+      <span>一切門徒生活的起點，是接受耶穌為主、藉著受洗公開表明信仰，正式成為神家中的一員。</span>
+    </div>
+  </div>
+
+  <!-- five-fold section -->
+  <div class="sec-h">
+    <h2>五重祝福：門徒委身的核心</h2>
+    <p>這五個面向，是我們作為門徒共同領受的祝福，也是彼此委身的樣式</p>
+  </div>
+
+  <div class="howto">
+    每一重祝福，先說明它的<b>屬靈意義（原則）</b>，再附上一個 <span class="pill">參考標準</span>。
+    標準是幫助我們自我檢視的參考點，不是評斷彼此的尺；真實的委身，永遠大於數字。
+  </div>
+
+  <div class="fivefold">
+    <div class="fold f1">
+      <div class="band"></div>
+      <div class="body">
+        <div class="top"><span class="num">1</span><h3>守主日</h3><span class="sub-en">WORSHIP</span></div>
+        <p class="principle">主日是神的家歡聚、一同敬拜的日子。穩定地委身於主日崇拜，是我們將神擺在首位、與群體連結的具體表達。</p>
+        <div class="std"><span class="stag">參考標準</span><span class="stxt">穩定地優先出席主日崇拜，使敬拜成為生活中不可取代的節奏（半年內出席率約 85% 以上）。</span></div>
+      </div>
+    </div>
+
+    <div class="fold f2">
+      <div class="band"></div>
+      <div class="body">
+        <div class="top"><span class="num">2</span><h3>過小家生活</h3><span class="sub-en">COMMUNITY</span></div>
+        <p class="principle">信仰不是獨自前行。在小家中彼此關懷、扶持、代禱，是生命被真實牧養、也學習牧養他人的所在。</p>
+        <div class="std"><span class="stag">參考標準</span><span class="stxt">穩定參與所屬小家的聚集與生活，在群體中被認識、被關顧（半年內出席率約 85% 以上）。</span></div>
+      </div>
+    </div>
+
+    <div class="fold f3">
+      <div class="band"></div>
+      <div class="body">
+        <div class="top"><span class="num">3</span><h3>晨禱與靈修</h3><span class="sub-en">DEVOTION</span></div>
+        <p class="principle">每日親近神、讀經禱告，是門徒生命的呼吸。穩定的靈修生活，使我們從神支取力量、聽見祂的聲音。</p>
+        <div class="std"><span class="stag">參考標準</span><span class="stxt">建立穩定的個人靈修（QT）習慣，使與神獨處成為每日或每週固定的操練（如每週至少 4 天）。</span></div>
+      </div>
+    </div>
+
+    <div class="fold f4">
+      <div class="band"></div>
+      <div class="body">
+        <div class="top"><span class="num">4</span><h3>委身培育系統</h3><span class="sub-en">GROWTH</span></div>
+        <p class="principle">生命需要持續被建造。藉著培育系統一步步紮根成長，是門徒邁向成熟、預備被神使用的道路。</p>
+        <div class="std"><span class="stag">參考標準</span><span class="stxt">持續參與培育課程，按著自己的步伐前進（成長班 → 門徒班 → 領袖班），不停滯於原地。</span></div>
+      </div>
+    </div>
+
+    <div class="fold f5">
+      <div class="band"></div>
+      <div class="body">
+        <div class="top"><span class="num">5</span><h3>十一奉獻</h3><span class="sub-en">STEWARDSHIP</span></div>
+        <p class="principle">奉獻是信心與感恩的操練，承認一切所有都來自神。穩定的奉獻，是我們將神擺在財務首位的敬拜。</p>
+        <div class="std"><span class="stag">參考標準</span><span class="stxt">按著聖經的教導，穩定地將收入的十分之一獻給神，作為委身與信靠的記號。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- discipleship ladder (brief) -->
+  <div class="ladder">
+    <h3>培育的階梯</h3>
+    <p class="lsub">門徒的成長有清楚的路徑，每個人都被邀請持續前進</p>
+    <div class="lsteps">
+      <div class="lstep"><div class="ln">成長班</div><div class="ld">建立根基</div><span class="arr">→</span></div>
+      <div class="lstep"><div class="ln">門徒班</div><div class="ld">紮根建造</div><span class="arr">→</span></div>
+      <div class="lstep"><div class="ln">領袖班</div><div class="ld">預備服事</div><span class="arr">→</span></div>
+      <div class="lstep last"><div class="ln">領袖建造</div><div class="ld">受託牧養</div></div>
+    </div>
+    <p class="lnote">當你完成裝備、心中有服事的渴慕，便可進入下一階段。<b>關於領袖建造與牧養的道路，另見《領袖建造之路》。</b></p>
+  </div>
+
+  <!-- mutual commitment -->
+  <div class="mutual">
+    <div class="mcol church">
+      <h4>教會對你的承諾</h4>
+      <ul>
+        <li>提供清楚的真理教導與屬靈餵養</li>
+        <li>在小家中給你關懷、扶持與牧養</li>
+        <li>陪伴你在培育的每一階段成長</li>
+        <li>在你的生命中為你守望、代禱</li>
+      </ul>
+    </div>
+    <div class="mcol member">
+      <h4>你作為門徒的委身</h4>
+      <ul>
+        <li>持守五重祝福，活出穩定的門徒生活</li>
+        <li>在群體中彼此相愛、彼此擔當</li>
+        <li>願意被建造、被牧養、持續成長</li>
+        <li>在恩典中回應神對你的呼召</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- elsewhere -->
+  <p class="elsewhere">這份規範描繪門徒生活的<b>核心樣式</b>。若你心中有服事與牧養的渴慕，歡迎進一步認識<b>《領袖建造之路》</b>。委身的細節與步伐，你的<b>區牧與小家長</b>都樂意與你一同探討。</p>
+
+  <div class="closing">
+    <p>願我們都在這條門徒的路上，一同長成主的樣式。</p>
+    <p class="cv">「直等到我們眾人……得以長大成人，滿有基督長成的身量。」弗 4:13</p>
+  </div>
+
+  <p class="foot">飛航事工 · 門徒培育與會籍規範 ｜ 全會友適用 ｜ 活文件，隨牧養實況更新</p>
+
+</div>
+</body>
+</html>

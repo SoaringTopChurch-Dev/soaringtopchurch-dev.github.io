@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>領袖建造之路 · 邀請你同行</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+:root{
+  --ink:#23302c; --ink2:#4a5a54; --paper:#f5f1e8; --paper2:#fbf8f1;
+  --pine:#1f3d36; --pine-soft:#2d544b; --gold:#b8893a; --gold-soft:#d9b873;
+  --cream:#f3ead6; --line:#d9d0bd; --neutral:#6b6354;
+  --invite:#1f3d36; --volunteer:#8a6d3b;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Noto Sans TC',sans-serif; color:var(--ink); line-height:1.7;
+  background:
+    radial-gradient(1100px 560px at 85% -8%, rgba(184,137,58,.12), transparent 60%),
+    radial-gradient(820px 460px at -8% 108%, rgba(31,61,54,.10), transparent 55%),
+    var(--paper);
+  padding:44px 18px 80px;
+}
+.wrap{max-width:760px; margin:0 auto;}
+
+/* hero */
+.hero{text-align:center; margin-bottom:38px;}
+.eyebrow{font-size:.76rem; letter-spacing:.38em; color:var(--gold); text-transform:uppercase; font-weight:700; margin:0 0 12px;}
+h1{font-family:'Noto Serif TC',serif; font-weight:900; font-size:2.5rem; color:var(--pine); margin:0 0 14px; letter-spacing:.03em; line-height:1.2;}
+.hero .lead{font-size:1.1rem; color:var(--ink2); font-family:'Noto Serif TC',serif; max-width:44ch; margin:0 auto;}
+.verse{font-size:.86rem; color:var(--neutral); margin-top:14px; font-style:italic;}
+
+/* invitation framing */
+.invite-msg{
+  background:linear-gradient(135deg,var(--pine),var(--pine-soft)); color:var(--cream);
+  border-radius:16px; padding:26px 30px; margin:0 0 36px; text-align:center;
+}
+.invite-msg p{margin:0; font-size:1.02rem; line-height:1.75; color:var(--cream);}
+.invite-msg b{color:#fff;}
+
+/* the path - vertical journey */
+.path-h{font-family:'Noto Serif TC',serif; text-align:center; color:var(--pine); font-size:1.5rem; margin:0 0 6px;}
+.path-sub{text-align:center; font-size:.9rem; color:var(--ink2); margin:0 0 28px;}
+
+/* start: two ways in */
+.entry-pair{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:8px;}
+.way{border-radius:14px; padding:20px 22px; color:#fff;}
+.way.inv{background:linear-gradient(150deg,var(--invite),var(--pine-soft));}
+.way.vol{background:linear-gradient(150deg,var(--volunteer),var(--gold-soft));}
+.way .wtag{font-size:.72rem; letter-spacing:.16em; opacity:.9; font-weight:700; color:var(--cream);}
+.way h3{font-family:'Noto Serif TC',serif; font-size:1.32rem; margin:5px 0 8px; color:#fff;}
+.way p{margin:0; font-size:.9rem; color:#f0e9d8; line-height:1.6;}
+
+.entry-note{text-align:center; font-size:.86rem; color:var(--ink2); margin:14px 0 0; padding:12px 18px; background:var(--cream); border-radius:10px;}
+.entry-note b{color:var(--pine);}
+
+/* connector */
+.down{text-align:center; color:var(--gold); font-size:1.6rem; margin:18px 0 10px; font-weight:700;}
+
+/* journey steps */
+.steps{display:flex; flex-direction:column; gap:14px;}
+.jstep{display:flex; gap:18px; align-items:flex-start; background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:20px 24px; position:relative;}
+.jstep .sn{
+  font-family:'Noto Serif TC',serif; font-weight:900; font-size:1.1rem; color:var(--cream);
+  background:var(--pine); width:44px; height:44px; border-radius:50%; flex:none;
+  display:flex; align-items:center; justify-content:center;
+}
+.jstep.final .sn{background:var(--gold); color:#2a1d06;}
+.jstep .jc h4{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.18rem; margin:0 0 5px;}
+.jstep .jc p{margin:0; font-size:.92rem; color:var(--ink2);}
+.jstep .jc .tag{display:inline-block; margin-top:9px; font-size:.76rem; font-weight:700; padding:3px 12px; border-radius:7px;}
+.jstep .jc .tag.min{background:var(--cream); color:var(--gold); border:1px solid var(--gold-soft);}
+.jstep .jc .tag.key{background:#f6edd6; color:var(--gold);}
+.jstep.final{background:linear-gradient(135deg,#f6edd6,#fbf8f1); border-color:var(--gold);}
+
+/* fruit focus highlight */
+.fruit{background:#fff; border:2px solid var(--gold); border-radius:16px; padding:24px 28px; margin:30px 0; position:relative;}
+.fruit .badge{position:absolute; top:-13px; left:28px; background:var(--gold); color:#2a1d06; font-family:'Noto Serif TC',serif; font-weight:700; font-size:.82rem; padding:4px 14px; border-radius:8px;}
+.fruit h3{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.3rem; margin:8px 0 6px;}
+.fruit p{margin:8px 0 0; font-size:.94rem; color:var(--ink2);}
+.fruit .fpts{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;}
+.fruit .fpt{flex:1; min-width:200px; background:var(--paper2); border-radius:11px; padding:14px 16px;}
+.fruit .fpt b{font-family:'Noto Serif TC',serif; color:var(--gold); display:block; margin-bottom:3px; font-size:.95rem;}
+.fruit .fpt span{font-size:.86rem; color:var(--ink2);}
+
+/* alignment principles */
+.principles{margin:36px 0 0;}
+.principles h2{font-family:'Noto Serif TC',serif; text-align:center; color:var(--pine); font-size:1.5rem; margin:0 0 6px;}
+.principles .psub{text-align:center; font-size:.9rem; color:var(--ink2); margin:0 0 24px;}
+.pgrid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+.pcard{background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:20px 22px; border-top:4px solid var(--gold);}
+.pcard .pn{font-family:'Noto Serif TC',serif; font-weight:900; color:var(--gold-soft); font-size:1.4rem; line-height:1;}
+.pcard h4{font-family:'Noto Serif TC',serif; color:var(--pine); font-size:1.1rem; margin:8px 0 6px;}
+.pcard p{margin:0; font-size:.9rem; color:var(--ink2); line-height:1.6;}
+
+/* harvest line */
+.harvest{background:linear-gradient(135deg,var(--volunteer),var(--gold-soft)); color:#fff; border-radius:14px; padding:22px 28px; margin:30px 0; text-align:center;}
+.harvest .hi{font-size:1.8rem; margin-bottom:6px;}
+.harvest p{margin:0; font-size:1.02rem; line-height:1.7; color:#fff;}
+.harvest b{color:#fff;}
+
+/* footer note - where to find the rest */
+.elsewhere{background:var(--cream); border-radius:12px; padding:18px 24px; margin:30px 0 0; font-size:.86rem; color:var(--ink2); text-align:center; line-height:1.7;}
+.elsewhere b{color:var(--pine);}
+
+.closing{text-align:center; margin:36px 0 0;}
+.closing p{font-family:'Noto Serif TC',serif; font-size:1.15rem; color:var(--pine); margin:0;}
+.closing .cv{font-size:.84rem; color:var(--neutral); font-style:italic; margin-top:8px;}
+
+.foot{text-align:center; font-size:.74rem; color:var(--neutral); margin-top:38px; letter-spacing:.05em;}
+
+@media print{
+  body{background:#fff; padding:0;}
+  .invite-msg,.way,.jstep .sn,.jstep.final,.fruit,.harvest,.pcard,.invite-msg p{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .entry-pair,.steps,.fruit,.principles{break-inside:avoid;}
+}
+@media(max-width:640px){
+  .entry-pair,.pgrid{grid-template-columns:1fr;}
+  h1{font-size:1.9rem;}
+  .jstep{padding:16px 18px; gap:14px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">飛航事工 · 領袖建造</p>
+    <h1>領袖建造之路</h1>
+    <p class="lead">神正在尋找忠心的人，被建造、會牧養、領人歸主。<br>這條路，邀請你一同走。</p>
+    <p class="verse">「莊稼多，工人少；所以你們當求莊稼的主，打發工人出去收他的莊稼。」路 10:2</p>
+  </div>
+
+  <div class="invite-msg">
+    <p>你不需要先成為完美的領袖，才開始這條路。<br>
+    <b>你只需要一顆願意的心</b>——願意被建造、願意去愛人、願意尋找那失喪的。<br>
+    其餘的，神與教會會陪你一起長成。</p>
+  </div>
+
+  <!-- THE PATH -->
+  <p class="path-h">這條路怎麼走？</p>
+  <p class="path-sub">從你現在的位置開始，一步一步，清楚可見</p>
+
+  <!-- two ways in -->
+  <div class="entry-pair">
+    <div class="way inv">
+      <div class="wtag">進入方式一</div>
+      <h3>受邀</h3>
+      <p>當你在生命與服事中已展現成熟與委身，牧者會主動邀請你進入領袖建造。</p>
+    </div>
+    <div class="way vol">
+      <div class="wtag">進入方式二</div>
+      <h3>自願</h3>
+      <p>當你心中有渴慕、有負擔，也可以主動向你的區牧表達，一同禱告尋求。</p>
+    </div>
+  </div>
+  <p class="entry-note">兩種方式都從同一個地方開始：<b>正在或已完成領袖班裝備</b>。若尚未完訓，第一步就是先進入培育系統，完成裝備。</p>
+
+  <div class="down">↓</div>
+
+  <!-- journey steps -->
+  <div class="steps">
+    <div class="jstep">
+      <span class="sn">1</span>
+      <div class="jc">
+        <h4>進入領袖建造</h4>
+        <p>無論受邀或自願，正式成為實習小家長，開始在實際的服事中被建造。</p>
+      </div>
+    </div>
+    <div class="jstep">
+      <span class="sn">2</span>
+      <div class="jc">
+        <h4>在服事中成長</h4>
+        <p>關懷、陪伴、餵養弟兄姊妹，持續傳福音、尋找失喪的羊。由你的領袖一路陪跑、扶持、教導。</p>
+      </div>
+    </div>
+    <div class="jstep">
+      <span class="sn">3</span>
+      <div class="jc">
+        <h4>六個月，結出果子</h4>
+        <p>在連續六個月中，你的生命與牧養／福音的果效穩定成長。這是這條路真正的重點。</p>
+        <span class="tag key">重點所在</span>
+      </div>
+    </div>
+    <div class="jstep final">
+      <span class="sn">✦</span>
+      <div class="jc">
+        <h4>受託成為正式小家長</h4>
+        <p>完成領袖班、走過六個月的成長，得著區牧、所牧養的弟兄姊妹、與牧師團隊的肯定，受託牧養。</p>
+        <span class="tag min">領袖班結業為最低要求</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- fruit focus -->
+  <div class="fruit">
+    <span class="badge">這條路看重什麼</span>
+    <h3>不是「讀完了什麼」，而是「結出了什麼」</h3>
+    <p>領袖班結業是裝備的完成，是入場——但能否受託牧養，看的是你在實際關係中結出的果子。神揀選人，看的是忠心，以及能否帶領、成全他人（提後 2:2）。</p>
+    <div class="fpts">
+      <div class="fpt"><b>生命的果子</b><span>穩定的靈修、聚會、奉獻與見證，生命在恩典中持續成長。</span></div>
+      <div class="fpt"><b>牧養與福音的果子</b><span>關懷陪伴弟兄姊妹、領人歸主、新朋友因你而穩定聚集。</span></div>
+    </div>
+  </div>
+
+  <!-- alignment principles -->
+  <div class="principles">
+    <h2>我們一起對齊的四個原則</h2>
+    <p class="psub">這是這條路的根基，也是我們對彼此的承諾</p>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="pn">一</div>
+        <h4>禾場是我們共同的</h4>
+        <p>傳福音、尋找失喪的羊、關懷新朋友，是我們每一個人共同的呼召與喜樂，不分先後、不分職份。</p>
+      </div>
+      <div class="pcard">
+        <div class="pn">二</div>
+        <h4>憑果子，不憑人情</h4>
+        <p>受託牧養，是因著生命與服事的真實果效，不憑年資、不憑關係。這是我們對公平的承諾。</p>
+      </div>
+      <div class="pcard">
+        <div class="pn">三</div>
+        <h4>身份平等，功能不同</h4>
+        <p>在神的家中，我們都是同樣寶貴的肢體。差別只在當前所領受的功能與成長的節奏（林前 12）。</p>
+      </div>
+      <div class="pcard">
+        <div class="pn">四</div>
+        <h4>真理是不可移的根基</h4>
+        <p>一切服事都建立在對真理的忠誠之上。這是保護羊群、也保護我們每一個人的界線。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- harvest -->
+  <div class="harvest">
+    <div class="hi">◈</div>
+    <p>無論你在這條路的哪一步，<b>有一件事是我們共同的</b>：<br>為失喪的靈魂得著，去愛、去尋找、去帶領他們回家。</p>
+  </div>
+
+  <!-- elsewhere -->
+  <p class="elsewhere">這份文件幫助你看見這條路的<b>方向與起點</b>。關於聚會、奉獻等會籍委身，請參見<b>門徒培育與會籍規範</b>；關於考核與任用的細節流程，你的<b>區牧與牧者</b>會在過程中一步步與你同行、為你說明。你不需要現在記住所有細節——只需要邁出第一步。</p>
+
+  <div class="closing">
+    <p>你願意嗎？</p>
+    <p class="cv">「我可以差遣誰呢？誰肯為我們去呢？」我說：「我在這裡，請差遣我！」以賽亞書 6:8</p>
+  </div>
+
+  <p class="foot">飛航事工 · 領袖建造之路 ｜ 同工邀請版 ｜ 願與你一同在禾場中成長</p>
+
+</div>
+</body>
+</html>
