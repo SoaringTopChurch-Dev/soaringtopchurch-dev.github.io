@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>飛航事工 · 領袖建造體系 — 體系導覽</title>
-<meta name="description" content="為教會建立的一套完整、有治理的領袖建造體系：分層的治理文件、陪伴候選人的牧養手冊、已上線的果效考核工具，與對外的呼召網站。">
+<meta name="description" content="為教會建立的一套分層、有治理的領袖建造體系：對外公開層、陪跑者園地、與牧長的設計治理層，幫助同工被興起、被陪伴、被印證。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -13,10 +13,7 @@
   --ink:#23302c; --ink2:#4a5a54; --paper:#f5f1e8; --paper2:#fbf8f1;
   --pine:#1f3d36; --pine-soft:#2d544b; --gold:#b8893a; --gold-soft:#d9b873;
   --cream:#f3ead6; --line:#d9d0bd; --neutral:#6b6354;
-  --kingdom:#3b5a78; --kingdom-bg:#e7eef4;
-  --build:#2d6a4f; --build-bg:#e6f0ea;
-  --shepherd:#8a6d3b; --shepherd-bg:#f4ecdb;
-  --evangel:#9c5a42; --evangel-bg:#f6e8df;
+  --kingdom:#3b5a78; --build:#2d6a4f; --shepherd:#8a6d3b; --evangel:#9c5a42;
   --pub:#2d6a4f; --semi:#b8893a; --comp:#3b5a78; --design:#37433d;
 }
 *{box-sizing:border-box;}
@@ -30,20 +27,16 @@ body{
   padding:0 0 64px;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:820px; margin:0 auto; padding:0 18px;}
+.wrap{max-width:780px; margin:0 auto; padding:0 18px;}
 a{color:var(--pine); text-decoration:none; border-bottom:1px solid var(--gold-soft);}
 a:hover{border-bottom-color:var(--gold);}
 
 /* ── HERO ── */
-.hero{text-align:center; padding:64px 18px 30px;}
+.hero{text-align:center; padding:60px 18px 26px;}
 .eyebrow{font-size:.74rem; letter-spacing:.4em; color:var(--gold); text-transform:uppercase; font-weight:700; margin:0 0 16px;}
-.hero h1{font-family:'Noto Sans TC',sans-serif; font-weight:900; font-size:2.55rem; color:var(--pine); margin:0 0 18px; letter-spacing:.02em; line-height:1.22;}
-.hero .lead{font-size:1.12rem; color:var(--ink2); font-family:'Noto Sans TC',sans-serif; max-width:30ch; margin:0 auto 14px; line-height:1.7;}
-.hero .who{font-size:.92rem; color:var(--neutral); max-width:40ch; margin:0 auto;}
-.hero .verse{font-size:.85rem; color:var(--neutral); margin-top:22px; font-style:italic;}
-
-/* glance strip */
-.glance{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:26px 0 0;}
+.hero h1{font-family:'Noto Sans TC',sans-serif; font-weight:900; font-size:2.45rem; color:var(--pine); margin:0 0 18px; letter-spacing:.02em; line-height:1.22;}
+.hero .lead{font-size:1.1rem; color:var(--ink2); max-width:32ch; margin:0 auto 22px; line-height:1.7;}
+.glance{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
 .pill{background:var(--paper2); border:1px solid var(--line); border-radius:999px; padding:7px 16px; font-size:.82rem; color:var(--ink2); font-weight:500;}
 .pill b{color:var(--pine);}
 .pill .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:7px; vertical-align:1px;}
@@ -51,113 +44,77 @@ a:hover{border-bottom-color:var(--gold);}
 .pill .dot.pend{background:var(--gold);}
 
 /* ── SECTION shell ── */
-section{margin-top:56px;}
+section{margin-top:52px;}
 .sec-eyebrow{font-size:.72rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; font-weight:700; text-align:center; margin:0 0 10px;}
-.sec-h{font-family:'Noto Sans TC',sans-serif; color:var(--pine); font-size:1.7rem; text-align:center; margin:0 0 10px; line-height:1.3;}
-.sec-sub{text-align:center; color:var(--ink2); font-size:.96rem; max-width:48ch; margin:0 auto 28px;}
+.sec-h{font-family:'Noto Sans TC',sans-serif; font-weight:900; color:var(--pine); font-size:1.62rem; text-align:center; margin:0 0 12px; line-height:1.3;}
+.sec-sub{text-align:center; color:var(--ink2); font-size:.95rem; max-width:48ch; margin:0 auto 26px;}
 
 /* ── PROBLEM ── */
-.problem{background:linear-gradient(135deg,var(--pine),var(--pine-soft)); color:var(--cream); border-radius:18px; padding:32px 30px;}
-.problem p{margin:0 0 14px; font-size:1.04rem; line-height:1.8;}
+.problem{background:linear-gradient(135deg,var(--pine),var(--pine-soft)); color:var(--cream); border-radius:18px; padding:30px 28px;}
+.problem p{margin:0 0 14px; font-size:1.02rem; line-height:1.8;}
 .problem p:last-child{margin-bottom:0;}
 .problem b{color:#fff;}
-.problem .tension{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0;}
-.problem .tcell{background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:16px 18px;}
-.problem .tcell .lab{font-size:.74rem; letter-spacing:.14em; color:var(--gold-soft); font-weight:700; margin:0 0 6px;}
-.problem .tcell p{font-size:.94rem; margin:0; color:var(--cream);}
 
-/* ── PRINCIPLES ── */
-.principles{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
-.pcard{background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:20px 22px; position:relative; overflow:hidden;}
-.pcard::before{content:''; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--gold);}
-.pcard .pn{font-family:'Noto Sans TC',sans-serif; font-weight:900; font-size:1.5rem; color:var(--gold-soft); line-height:1;}
-.pcard h3{font-family:'Noto Sans TC',sans-serif; color:var(--pine); font-size:1.12rem; margin:8px 0 8px;}
-.pcard p{margin:0; font-size:.9rem; color:var(--ink2); line-height:1.68;}
-.pcard p b{color:var(--pine);}
-.guard{margin-top:18px; background:var(--cream); border:1px solid var(--gold-soft); border-radius:12px; padding:16px 22px; font-size:.88rem; color:var(--ink2); text-align:center; line-height:1.7;}
-.guard b{color:var(--pine);}
+/* ── OFFER (who gets what) ── */
+.offer{display:flex; flex-direction:column; gap:14px;}
+.orow{display:flex; gap:16px; align-items:flex-start; background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:18px 20px; border-left:5px solid var(--gold);}
+.orow.pub{border-left-color:var(--pub);}
+.orow.comp{border-left-color:var(--comp);}
+.orow.design{border-left-color:var(--design);}
+.orow .who{flex:none; width:92px; font-weight:900; color:var(--pine); font-size:1.02rem; line-height:1.35;}
+.orow .what{flex:1;}
+.orow .what h3{margin:0 0 5px; font-size:1.02rem; color:var(--pine);}
+.orow .what p{margin:0; font-size:.9rem; color:var(--ink2); line-height:1.66;}
 
-/* ── FOUR DIMENSIONS ── */
-.dims{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
-.dim{border-radius:14px; padding:18px 20px; color:#fff;}
-.dim.k{background:linear-gradient(135deg,var(--kingdom),#2e4860);}
-.dim.b{background:linear-gradient(135deg,var(--build),#225840);}
-.dim.s{background:linear-gradient(135deg,var(--shepherd),var(--gold-soft));}
-.dim.e{background:linear-gradient(135deg,var(--evangel),#b06b4e);}
-.dim .ico{font-size:1.5rem;}
-.dim .dl{font-size:.72rem; letter-spacing:.14em; opacity:.92; font-weight:700; margin:6px 0 2px;}
-.dim h3{font-family:'Noto Sans TC',sans-serif; font-size:1.18rem; margin:0 0 6px;}
-.dim p{margin:0; font-size:.88rem; line-height:1.65; color:rgba(255,255,255,.92);}
+/* ── BENEFITS ── */
+.benefits{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+.bcard{background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:18px 20px;}
+.bcard .bi{font-size:1.4rem;}
+.bcard h3{font-family:'Noto Sans TC',sans-serif; font-weight:700; color:var(--pine); font-size:1.04rem; margin:8px 0 6px;}
+.bcard p{margin:0; font-size:.88rem; color:var(--ink2); line-height:1.66;}
 
-/* ── DELIVERABLES / three views ── */
-.views{display:flex; flex-direction:column; gap:18px;}
-.view{border-radius:16px; overflow:hidden; border:1px solid var(--line); background:var(--paper2);}
-.view .vh{padding:18px 22px; color:#fff;}
-.view.design .vh{background:linear-gradient(135deg,var(--design),#4a584f);}
-.view.pub .vh{background:linear-gradient(135deg,var(--pub),#225840);}
-.view.comp .vh{background:linear-gradient(135deg,var(--comp),#2e4860);}
-.view .vh .vlab{font-size:.72rem; letter-spacing:.16em; font-weight:700; opacity:.9;}
-.view .vh h3{font-family:'Noto Sans TC',sans-serif; font-size:1.28rem; margin:3px 0 4px; color:#fff;}
-.view .vh .vaud{font-size:.84rem; opacity:.88;}
-.view .vb{padding:18px 22px; display:flex; flex-direction:column; gap:12px;}
-.deliv{display:flex; gap:14px; align-items:flex-start;}
-.deliv .tag{flex:none; width:34px; height:34px; border-radius:9px; background:var(--cream); color:var(--pine); font-family:'Noto Sans TC',sans-serif; font-weight:900; font-size:1.02rem; display:flex; align-items:center; justify-content:center; border:1px solid var(--gold-soft);}
-.deliv .tag.semi{background:var(--semi); color:#fff; border-color:var(--semi);}
-.deliv .dx{flex:1;}
-.deliv .dx h4{margin:2px 0 3px; font-size:1rem; color:var(--pine);}
-.deliv .dx p{margin:0; font-size:.87rem; color:var(--ink2); line-height:1.62;}
-.status-chip{display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.05em; padding:2px 9px; border-radius:999px; margin-left:8px; vertical-align:1px;}
-.status-chip.live{background:var(--build-bg); color:#1d5239;}
-.status-chip.pend{background:var(--shepherd-bg); color:#7a5e23;}
-.status-chip.lock{background:#eee7da; color:#6b6354;}
-.flowline{text-align:center; font-size:.84rem; color:var(--neutral); padding:2px 0;}
-.flowline .arr{color:var(--gold); font-weight:700;}
+/* ── RESOURCES ── */
+.res{display:flex; flex-direction:column; gap:14px;}
+.rgrp{background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:18px 20px;}
+.rgrp .gh{font-family:'Noto Sans TC',sans-serif; font-weight:900; color:var(--pine); font-size:1.06rem; margin:0 0 4px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+.rgrp .gs{font-size:.82rem; color:var(--neutral); margin:0 0 12px;}
+.rline{display:flex; gap:12px; align-items:flex-start; padding:7px 0; border-top:1px solid var(--line);}
+.rline:first-of-type{border-top:0;}
+.rline .tag{flex:none; width:30px; height:30px; border-radius:8px; background:var(--cream); color:var(--pine); font-weight:900; font-size:.95rem; display:flex; align-items:center; justify-content:center; border:1px solid var(--gold-soft);}
+.rline .tag.semi{background:var(--semi); color:#fff; border-color:var(--semi);}
+.rline .rx{flex:1;}
+.rline .rx h4{margin:1px 0 2px; font-size:.96rem; color:var(--pine);}
+.rline .rx p{margin:0; font-size:.84rem; color:var(--ink2); line-height:1.58;}
+.rurl{margin:3px 0 0 !important; font-size:.76rem; color:var(--neutral); word-break:break-all;}
+.chip{display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.04em; padding:2px 8px; border-radius:999px; margin-left:6px; vertical-align:1px;}
+.chip.live{background:#e6f0ea; color:#1d5239;}
+.chip.lock{background:#eee7da; color:#6b6354;}
+
+/* ── APPENDIX ── */
+.appendix{margin-top:60px; padding-top:30px; border-top:2px dashed var(--line);}
+.acard{background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-top:16px;}
+.acard h3{font-family:'Noto Sans TC',sans-serif; font-weight:700; color:var(--pine); font-size:1.06rem; margin:0 0 8px; display:flex; align-items:center; gap:8px;}
+.acard p{margin:0 0 8px; font-size:.9rem; color:var(--ink2); line-height:1.72;}
+.acard p:last-child{margin-bottom:0;}
+.acard b{color:var(--pine);}
+.acard ul{margin:6px 0 0; padding:0 0 0 2px; list-style:none;}
+.acard li{font-size:.88rem; color:var(--ink2); padding:4px 0 4px 20px; position:relative; line-height:1.55;}
+.acard li::before{content:'·'; position:absolute; left:4px; color:var(--gold); font-weight:900;}
 
 /* governance map */
-.mapwrap{margin-top:26px; background:var(--paper2); border:1px solid var(--line); border-radius:16px; padding:18px; overflow:hidden;}
+.mapwrap{margin-top:16px; background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:16px; overflow:hidden;}
 .mapwrap svg{width:100%; height:auto; display:block; border-radius:10px;}
-.mapcap{text-align:center; font-size:.82rem; color:var(--neutral); margin:12px 4px 0; line-height:1.6;}
+.mapcap{text-align:center; font-size:.8rem; color:var(--neutral); margin:10px 4px 0; line-height:1.6;}
 
-/* ── HOW BUILT ── */
-.how{background:#fff; border:2px solid var(--gold); border-radius:16px; padding:26px 28px; position:relative;}
-.how .badge{position:absolute; top:-13px; left:26px; background:var(--gold); color:#2a1d06; font-family:'Noto Sans TC',sans-serif; font-weight:700; font-size:.8rem; padding:4px 14px; border-radius:8px;}
-.how p{margin:10px 0 0; font-size:.96rem; color:var(--ink2); line-height:1.76;}
-.how p:first-of-type{margin-top:6px;}
-.how b{color:var(--pine);}
-.how .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:20px 0 0;}
-.how .step{background:var(--paper2); border:1px solid var(--line); border-radius:11px; padding:14px 16px;}
-.how .step .si{font-size:1.2rem;}
-.how .step h4{margin:6px 0 4px; font-size:.92rem; color:var(--pine);}
-.how .step p{margin:0; font-size:.8rem; color:var(--ink2); line-height:1.55;}
-
-/* ── STATUS ── */
-.statwrap{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-.statbox{border-radius:14px; padding:20px 22px;}
-.statbox.live{background:var(--build-bg); border:1px solid #bcd9c8;}
-.statbox.pend{background:var(--shepherd-bg); border:1px solid var(--gold-soft);}
-.statbox h3{font-family:'Noto Sans TC',sans-serif; font-size:1.12rem; margin:0 0 12px; display:flex; align-items:center; gap:8px;}
-.statbox.live h3{color:#1d5239;}
-.statbox.pend h3{color:#7a5e23;}
-.statbox ul{margin:0; padding:0; list-style:none;}
-.statbox li{font-size:.88rem; color:var(--ink2); padding:5px 0 5px 22px; position:relative; line-height:1.55;}
-.statbox.live li::before{content:'✓'; position:absolute; left:0; color:#2d6a4f; font-weight:700;}
-.statbox.pend li::before{content:'◷'; position:absolute; left:0; color:var(--gold);}
-
-/* ── CLOSING ── */
-.closing{text-align:center; margin-top:56px;}
-.closing p{font-family:'Noto Sans TC',sans-serif; font-size:1.22rem; color:var(--pine); margin:0; line-height:1.6;}
-.closing .cv{font-size:.84rem; color:var(--neutral); font-style:italic; margin-top:10px;}
 .foot{text-align:center; font-size:.74rem; color:var(--neutral); margin-top:44px; letter-spacing:.04em; line-height:1.7;}
 
 @media (max-width:560px){
-  .hero h1{font-size:2rem;}
-  .hero .lead{font-size:1.02rem;}
-  .principles{grid-template-columns:1fr;}
-  .dims{grid-template-columns:1fr;}
-  .problem .tension{grid-template-columns:1fr;}
-  .how .steps{grid-template-columns:1fr;}
-  .statwrap{grid-template-columns:1fr;}
-  .sec-h{font-size:1.42rem;}
+  .hero h1{font-size:1.95rem;}
+  .hero .lead{font-size:1rem;}
+  .benefits{grid-template-columns:1fr;}
+  .orow{flex-direction:column; gap:8px;}
+  .orow .who{width:auto;}
+  .sec-h{font-size:1.4rem;}
 }
 </style>
 </head>
@@ -166,186 +123,160 @@ section{margin-top:56px;}
 <!-- ══ HERO ══ -->
 <header class="hero">
   <p class="eyebrow">飛航事工 · 領袖建造體系</p>
-  <h1>一套完整、有治理的<br>領袖建造體系</h1>
-  <p class="lead">為教會把「興起並建造領袖」這件事，做成一個可運作、可繁殖的體系。</p>
-  <p class="who">給牧長、區牧、陪跑者，與每一位渴慕服事的同工——分層的治理文件、陪伴候選人的牧養手冊、已上線的果效考核工具，與對外的呼召網站。</p>
-  <p class="verse">「你在許多見證人面前聽見我所教訓的，也要交託那忠心能教導別人的人。」— 提摩太後書 2:2</p>
+  <h1>一套分層、有治理的<br>領袖建造體系</h1>
+  <p class="lead">為教會把「興起並建造領袖」這件事，做成一個可運作、可複製的體系。</p>
   <div class="glance">
     <span class="pill"><b>四個維度</b> · 一致骨架</span>
-    <span class="pill"><b>四個層級</b> · 分層披露</span>
-    <span class="pill"><span class="dot live"></span>三套系統<b>已上線</b></span>
+    <span class="pill"><span class="dot live"></span>三個層級<b>已上線</b></span>
     <span class="pill"><span class="dot pend"></span>牧長背書<b>進行中</b></span>
   </div>
 </header>
 
 <div class="wrap">
 
-<!-- ══ PROBLEM ══ -->
+<!-- ══ 1. 解決什麼問題 ══ -->
 <section>
   <p class="sec-eyebrow">為何而建</p>
-  <h2 class="sec-h">它解決什麼問題</h2>
+  <h2 class="sec-h">解決什麼問題？</h2>
   <div class="problem">
-    <p>教會的張力很真實——<b>慕道與初信者不斷湧入，牧養人力卻跟不上</b>；同時，手上還有一批已完成領袖班、卻在原地等候被啟動的成熟同工。</p>
-    <div class="tension">
-      <div class="tcell"><p class="lab">缺口</p><p>羊群增長快過牧養者被興起的速度。</p></div>
-      <div class="tcell"><p class="lab">存量</p><p>已裝備卻停滯的同工，等候被重新看見。</p></div>
-    </div>
-    <p>過去的嘗試常把「准入資格、發展指標、治理條款」三種不同性質的東西，擠進同一張勾選表——結果是混亂、重疊，還有把屬靈生命變成考績的風險。</p>
-    <p>本體系是對這個問題的系統性回應：<b>不是用一份大文件管所有事，而是一個分層的體系——每一層只對它的受眾說該說的話。</b></p>
+    <p>慕道與初信者的牧養需要，隨著教會事工推廣而不斷增長；同時也有一批完成領袖班、預備好被興起的成熟同工。</p>
+    <p>要把人興起、把陪伴接上，有三種需要要被滿足：<b>待興起的領袖需要方向</b>、<b>陪跑的領袖需要工具與指引</b>、<b>牧長需要綜觀全局</b>。</p>
+    <p>本體系正是對這三種需要的系統性回應：<b>不是用一份大文件管所有事，而是分層——每一層只對它的受眾，說該說的話。</b></p>
   </div>
 </section>
 
-<!-- ══ SIX PRINCIPLES ══ -->
+<!-- ══ 2. 提供什麼給誰 ══ -->
 <section>
-  <p class="sec-eyebrow">不變內核</p>
-  <h2 class="sec-h">六條貫穿全體系的原則</h2>
-  <p class="sec-sub">這六條是體系的「憲法」——所有文件、工具與文案，前後一致地共用同一套骨架。</p>
-  <div class="principles">
-    <div class="pcard">
-      <div class="pn">1</div>
-      <h3>四個維度</h3>
-      <p>領袖建造圍繞 <b>國度異象 · 領袖建造 · 羊群牧養 · 福音廣傳</b> 四維展開。職份畫像、考核表、培育框架全部共用這套骨架。</p>
+  <p class="sec-eyebrow">分層披露</p>
+  <h2 class="sec-h">提供什麼給誰？</h2>
+  <p class="sec-sub">同一套真相，向不同受眾揭露不同的深度。</p>
+  <div class="offer">
+    <div class="orow pub">
+      <div class="who">待興起的領袖／新牧人</div>
+      <div class="what">
+        <h3>對外公開層</h3>
+        <p>呼召網站與門徒培育規範，說明這條路是什麼、如何進入——是邀請，不是門檻清單。</p>
+      </div>
     </div>
-    <div class="pcard">
-      <div class="pn">2</div>
-      <h3>雙閘門</h3>
-      <p>入口是領袖班<b>在讀</b>；出口是領袖班<b>結業</b>（最低）加上<b>六個月果效考核</b>（重點）。結業證明裝備，果效驗證牧養實力。</p>
+    <div class="orow comp">
+      <div class="who">陪跑者</div>
+      <div class="what">
+        <h3>陪跑者園地</h3>
+        <p>登入制的知識庫與陪跑工具，陪伴新牧人走過六個月、記錄成長的軌跡。</p>
+      </div>
     </div>
-    <div class="pcard">
-      <div class="pn">3</div>
-      <h3>兩種進入方式</h3>
-      <p><b>受邀</b>（教會主動邀成熟者）與<b>自願</b>（渴慕者主動報名），原則上等價、無高下之分。</p>
-    </div>
-    <div class="pcard">
-      <div class="pn">4</div>
-      <h3>共同的禾場</h3>
-      <p>傳福音與關懷新朋友，是<b>每一位同工的共同期待</b>。同工不是被分配任務，而是按成熟度承接不同範圍的牧養責任。</p>
-    </div>
-    <div class="pcard">
-      <div class="pn">5</div>
-      <h3>明確處明確，恩典處留白</h3>
-      <p>事實門檻可查核；行為有明確閾值加情境彈性；而<b>生命特質刻意不打分</b>——用領袖與群體的印證來辨識，不化約為分數。</p>
-    </div>
-    <div class="pcard">
-      <div class="pn">6</div>
-      <h3>平等的身份，不同的功能</h3>
-      <p>各進入方式、各成長階段的同工，在神兒女與肢體的身份上完全平等；差別只在當前的受託範圍與成長節奏（林前 12）。</p>
-    </div>
-  </div>
-  <p class="guard">此外有一條獨立的治理界線，全程適用、不混入考核：<b>若服事中有違背真理之情事，教會有權撤其職份、停止其服事。</b></p>
-</section>
-
-<!-- ══ FOUR DIMENSIONS detail ══ -->
-<section>
-  <p class="sec-eyebrow">一致的骨架</p>
-  <h2 class="sec-h">四個維度，貫穿始終</h2>
-  <p class="sec-sub">同一套四維度，先描繪「將要成為的樣式」，再成為日後考核與培育的維度——以終為始。</p>
-  <div class="dims">
-    <div class="dim k">
-      <div class="ico">✦</div>
-      <div class="dl">維度一 · 國度異象</div>
-      <h3>連於異象的人</h3>
-      <p>活在比自己更大的故事裡——參與神在這世代的工作，而不只是維持一個聚會。</p>
-    </div>
-    <div class="dim b">
-      <div class="ico">⬡</div>
-      <div class="dl">維度二 · 領袖建造</div>
-      <h3>被建造、能建造人</h3>
-      <p>自己先是持續被建造的門徒，才能成為建造他人的器皿，活出可效法的榜樣。</p>
-    </div>
-    <div class="dim s">
-      <div class="ico">♥</div>
-      <div class="dl">維度三 · 羊群牧養</div>
-      <h3>有牧人心腸的人</h3>
-      <p>像主耶穌一樣認得每一隻羊——牧養不是管理，是出於愛的關懷與陪伴。</p>
-    </div>
-    <div class="dim e">
-      <div class="ico">◈</div>
-      <div class="dl">維度四 · 福音廣傳</div>
-      <h3>尋找失喪之羊的人</h3>
-      <p>心與主的心一同跳動——不只牧養已有的，更不斷向外尋找、領人歸主。</p>
+    <div class="orow design">
+      <div class="who">牧長</div>
+      <div class="what">
+        <h3>設計 · 治理層</h3>
+        <p>體系的根基：基本原則、發展框架及治理界線，支持對外公開與陪跑者的需要。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ DELIVERABLES / THREE VIEWS ══ -->
+<!-- ══ 3. 好處 ══ -->
 <section>
-  <p class="sec-eyebrow">體系全貌</p>
-  <h2 class="sec-h">三個互聯的視角，六份交付</h2>
-  <p class="sec-sub">同一套真相，向不同受眾揭露不同的深度。治理／設計是真相來源，向下供應對外選召與陪跑者同行兩個視角。</p>
+  <p class="sec-eyebrow">帶來什麼</p>
+  <h2 class="sec-h">好處？</h2>
+  <div class="benefits">
+    <div class="bcard">
+      <div class="bi">🧭</div>
+      <h3>以終為始</h3>
+      <p>待興起的領袖／新牧人知道如何朝著標竿直跑，也知道路上有哪些同行的增援與支持。</p>
+    </div>
+    <div class="bcard">
+      <div class="bi">🤝</div>
+      <h3>陪跑輕省</h3>
+      <p>手冊資源指引每個陪跑步驟的行動，手機工具讓輔導過程與結果的紀錄與管理輕鬆省事。</p>
+    </div>
+    <div class="bcard">
+      <div class="bi">🔒</div>
+      <h3>資安治理</h3>
+      <p>分層把關的權控讓私密的屬靈資料完善保護，不洩漏、不外流。</p>
+    </div>
+    <div class="bcard">
+      <div class="bi">🌱</div>
+      <h3>系統化 · 可複製</h3>
+      <p>屬靈、牧養與治理三大核心貫串整個體系，系統化支持教會持續成長並興起領袖的需要。</p>
+    </div>
+  </div>
+</section>
 
-  <div class="views">
+<!-- ══ 4. 資源在哪裡 ══ -->
+<section>
+  <p class="sec-eyebrow">入口一覽</p>
+  <h2 class="sec-h">資源在哪裡？</h2>
+  <p class="sec-sub">公開的可直接連結；半公開與登入限定的，由領袖按需提供或經授權進入。</p>
+  <div class="res">
 
-    <!-- design view -->
-    <div class="view design">
-      <div class="vh">
-        <div class="vlab">真相來源</div>
-        <h3>治理 · 設計視角</h3>
-        <div class="vaud">受眾：牧長團隊與設計者</div>
+    <div class="rgrp">
+      <p class="gh">對外公開層 <span class="chip live">已上線</span></p>
+      <p class="gs">全會友皆可閱讀，QR／短網址發放。</p>
+      <div class="rline">
+        <div class="tag">①</div>
+        <div class="rx"><h4><a href="https://soaringtopchurch-dev.github.io/leadership-path.html">領袖建造之路</a></h4><p>對外的呼召：兩種進入方式與這條路的全貌。</p><p class="rurl">soaringtopchurch-dev.github.io/leadership-path.html</p></div>
       </div>
-      <div class="vb">
-        <div class="deliv">
-          <div class="tag">綱</div>
-          <div class="dx"><h4>治理憲章（元層總綱）</h4><p>說明體系如何運作、為何這樣設計——六原則、分層披露、紅線界線的源頭。</p></div>
-        </div>
-        <div class="deliv">
-          <div class="tag">⑤</div>
-          <div class="dx"><h4>培育發展框架<span class="status-chip pend">待牧長背書</span></h4><p>給牧長使用的治理層框架：把四維度與雙閘門落實為可帶領、可繁殖的培育路徑。</p></div>
-        </div>
+      <div class="rline">
+        <div class="tag">②</div>
+        <div class="rx"><h4><a href="https://soaringtopchurch-dev.github.io/discipleship-membership.html">門徒培育與會籍規範</a></h4><p>作為這間教會的門徒，委身的基準是什麼。</p><p class="rurl">soaringtopchurch-dev.github.io/discipleship-membership.html</p></div>
+      </div>
+      <div class="rline">
+        <div class="tag semi">③</div>
+        <div class="rx"><h4>小家長職份畫像 <span class="chip lock">半公開 · 親手提供給待興起的領袖／新牧人</span></h4><p>「我將要成為什麼樣的人？」由領袖在合適時機親手提供（不上公開站）。</p></div>
       </div>
     </div>
 
-    <div class="flowline"><span class="arr">↓</span> 供應 <span class="arr">↓</span></div>
-
-    <!-- public view -->
-    <div class="view pub">
-      <div class="vh">
-        <div class="vlab">對外 · 選召</div>
-        <h3>選召視角</h3>
-        <div class="vaud">受眾：新朋友 · 渴慕服事者 · 受召的新領袖</div>
+    <div class="rgrp">
+      <p class="gh">陪跑者園地 <span class="chip live">已上線</span> <span class="chip lock">登入限定</span></p>
+      <p class="gs">需 Google 登入＋授權名單方可進入。</p>
+      <div class="rline">
+        <div class="tag">⑥</div>
+        <div class="rx"><h4><a href="https://script.google.com/macros/s/AKfycbxeJygfzISu_OdG5Gy05IyXJnaPuzuUFp-YxW0413ZTLFWgco5Cin7NCKTFq72tSo47hQ/exec?page=kb">陪跑者園地 · 知識庫</a></h4><p>正式入口：使用手冊、進入工具，與陪伴新牧人的牧養手冊，皆由此進。需 Google 登入＋授權名單。</p></div>
       </div>
-      <div class="vb">
-        <div class="deliv">
-          <div class="tag">①</div>
-          <div class="dx"><h4>領袖建造之路<span class="status-chip live">已上線</span></h4><p>對外的呼召文案：兩種進入方式、四步旅程、結業加六個月考核——邀請，而非關卡清單。</p></div>
-        </div>
-        <div class="deliv">
-          <div class="tag">②</div>
-          <div class="dx"><h4>門徒培育與會籍規範<span class="status-chip live">已上線</span></h4><p>作為這間教會的門徒，委身的基準是什麼——以受洗為根基、五重祝福為核心。</p></div>
-        </div>
-        <div class="deliv">
-          <div class="tag semi">③</div>
-          <div class="dx"><h4>小家長職份畫像<span class="status-chip lock">半公開 · 按需面交</span></h4><p>「我將要成為什麼樣的人？」——四維度的激勵性畫像，由領袖在合適的時機面交，幫助對方看清終點後立志。</p></div>
-        </div>
+      <div class="rline">
+        <div class="tag">④</div>
+        <div class="rx"><h4>陪跑記錄工具</h4><p>逐月記錄成長軌跡，一同辨識「新牧人是否預備好了」。<b>經 ⑥ 陪跑者園地進入</b>，不另設入口。</p></div>
       </div>
     </div>
 
-    <div class="flowline">受召的新領袖，加入授權名單後 <span class="arr">→</span> 進入同行</div>
+  </div>
+</section>
 
-    <!-- companion view -->
-    <div class="view comp">
-      <div class="vh">
-        <div class="vlab">陪跑者 · 同行</div>
-        <h3>同行視角</h3>
-        <div class="vaud">受眾：陪跑者與牧長（Google 登入 · 授權名單）</div>
-      </div>
-      <div class="vb">
-        <div class="deliv">
-          <div class="tag">④</div>
-          <div class="dx"><h4>轉正考核工具<span class="status-chip live">已上線</span><span class="status-chip lock">登入限定</span></h4><p>四維度考核加六個月成果追蹤的線上工具。敏感欄位伺服器端遮罩、名單授權、稽核軌跡——呈現數據、把判斷權留給牧者。</p></div>
-        </div>
-        <div class="deliv">
-          <div class="tag">⑥</div>
-          <div class="dx"><h4>牧者輔導手冊 · 陪跑者園地<span class="status-chip live">已上線</span><span class="status-chip lock">登入限定</span></h4><p>登入制的知識庫：使用手冊、進入工具的入口、與陪伴候選人的牧養手冊（停滯者關懷、一對一帶領等手法）。</p></div>
-        </div>
-      </div>
-    </div>
+<!-- ══ 5. 附錄 ══ -->
+<section class="appendix">
+  <p class="sec-eyebrow">附錄</p>
+  <h2 class="sec-h">其他效益與特色</h2>
 
+  <div class="acard">
+    <h3>🛠 怎麼被建起來</h3>
+    <p>這套體系源於 <b>百飛區牧「以陪跑興起領袖」的異象</b>。為回應教會興起小家長領袖的需要，我們把這份火熱化為一套體系化的支撐系統，並組織了一個 <b>由 AI 編排、有治理審查的協作團隊</b> 來實現它——從牧養手冊，到已上線的工具與網站。</p>
+    <p>它不是「一個人關起門寫」，而是有角色分工、有審查的協作：每份產出，我們都先以 <b>「神學與治理」原則自我審查</b>，再對照 <b>體系的基本治理原則</b> 覆核之後才產生。速度與嚴謹得以並存。</p>
+  </div>
+
+  <div class="acard">
+    <h3>🔒 隱私與權控</h3>
+    <ul>
+      <li>需 Google 登入＋授權名單方可進入，逐人控管。</li>
+      <li>敏感欄位伺服器端遮罩：陪跑者只見自己所帶新牧人的完整內容，他人僅見基本資料；區牧／牧長綜覽全部。</li>
+      <li>奉獻、靈修、生命成熟度等高度個人屬靈資料，以權控保護，不公開、不外流。</li>
+      <li>資料庫私有、留有稽核軌跡；金鑰僅存伺服器端，不寫入任何前端或網站原始碼。</li>
+    </ul>
+  </div>
+
+  <div class="acard">
+    <h3>📋 陪跑記錄工具的效率</h3>
+    <ul>
+      <li>繁瑣的整理、計算、留底，工具一手接下——把時間還給陪伴。</li>
+      <li>四維度 × 六個月，逐月記錄、自動彙整為報表，呈現成長軌跡。</li>
+      <li>每次儲存都留底（append-only），歷次紀錄可回溯、不覆蓋。</li>
+      <li>一鍵下載 PDF、行動優先：手機即可填寫，服事現場不必回到桌機。</li>
+    </ul>
   </div>
 
   <!-- governance map -->
   <div class="mapwrap">
-    <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="治理總覽圖：三個互聯視角">
+    <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="治理總覽圖：三個互聯層級">
       <defs>
         <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
           <path d="M0 0 L10 5 L0 10 z" fill="#9a958a"/>
@@ -366,13 +297,13 @@ section{margin-top:56px;}
       </defs>
       <rect x="0" y="0" width="960" height="600" fill="#f7f4ec"/>
       <text x="480" y="32" text-anchor="middle" class="m-ttl">領袖建造體系 — 治理總覽</text>
-      <text x="480" y="54" text-anchor="middle" class="m-sub">三個互聯視角 ｜ 已上線：對外站 · 考核工具 · 陪跑者園地</text>
+      <text x="480" y="54" text-anchor="middle" class="m-sub">三個互聯層級 ｜ 已上線：對外站 · 陪跑工具 · 陪跑者園地</text>
 
       <!-- design row -->
       <rect x="70" y="74" width="820" height="92" rx="14" fill="#37433d"/>
-      <text x="88" y="98" class="m-vh">治理 · 設計視角</text>
+      <text x="88" y="98" class="m-vh">設計 · 治理層</text>
       <text x="88" y="116" class="m-va">牧長 ↔ 統籌 ｜ 體系真相來源（canon）</text>
-      <rect x="88" y="124" width="250" height="34" rx="8" class="m-item"/><text x="100" y="146" class="m-bx">元層 治理憲章 · 總綱</text>
+      <rect x="88" y="124" width="250" height="34" rx="8" class="m-item"/><text x="100" y="146" class="m-bx">基本治理原則 · 總綱</text>
       <rect x="350" y="124" width="250" height="34" rx="8" class="m-item"/><text x="362" y="146" class="m-bx">⑤ 培育發展框架</text>
       <rect x="612" y="124" width="260" height="34" rx="8" class="m-dash"/><text x="624" y="146" class="m-bx">牧長背書 · 進行中</text>
 
@@ -383,8 +314,8 @@ section{margin-top:56px;}
 
       <!-- public view -->
       <rect x="70" y="212" width="372" height="222" rx="14" fill="#2d6a4f"/>
-      <text x="88" y="236" class="m-vh">對外 · 選召視角</text>
-      <text x="88" y="254" class="m-va">新朋友 · 渴慕者 · 受召新領袖</text>
+      <text x="88" y="236" class="m-vh">對外公開層</text>
+      <text x="88" y="254" class="m-va">待興起的領袖 · 新牧人</text>
       <rect x="88" y="264" width="336" height="70" rx="10" class="m-item"/>
       <text x="100" y="288" class="m-bx">對外公開網站（已上線）</text>
       <text x="100" y="308" class="m-bxs">① 領袖建造之路 · ② 門徒培育與會籍規範</text>
@@ -396,110 +327,32 @@ section{margin-top:56px;}
 
       <!-- companion view -->
       <rect x="488" y="212" width="402" height="222" rx="14" fill="#3b5a78"/>
-      <text x="506" y="236" class="m-vh">陪跑者 · 同行視角</text>
+      <text x="506" y="236" class="m-vh">陪跑者園地</text>
       <text x="506" y="254" class="m-va">Google 登入 + 授權名單</text>
       <rect x="506" y="264" width="366" height="70" rx="10" class="m-item"/>
       <text x="518" y="288" class="m-bx">陪跑者園地 · 知識庫</text>
       <text x="518" y="308" class="m-bxs">使用手冊 + 進入工具 + ⑥ 牧者輔導手冊</text>
       <text x="518" y="326" class="m-bxs">已上線 · 部分章節待牧長定調</text>
       <rect x="506" y="342" width="366" height="80" rx="10" class="m-item"/>
-      <text x="518" y="366" class="m-bx">④ 轉正考核工具</text>
+      <text x="518" y="366" class="m-bx">④ 陪跑記錄工具</text>
       <text x="518" y="386" class="m-bxs">敏感欄位遮罩 · 名單授權 · 稽核軌跡</text>
-      <text x="518" y="406" class="m-bxs">已上線（判準待牧長背書）</text>
+      <text x="518" y="406" class="m-bxs">記錄成長軌跡（判準待牧長背書）</text>
 
       <path d="M442 328 L488 328" class="m-flow" marker-end="url(#ar)"/>
-      <text x="465" y="352" text-anchor="middle" class="m-conn" transform="rotate(-90 465 352)">選召進陪跑</text>
+      <text x="465" y="352" text-anchor="middle" class="m-conn" transform="rotate(-90 465 352)">進入陪跑</text>
 
       <!-- legend -->
       <rect x="70" y="464" width="14" height="14" rx="3" fill="#2d6a4f"/><text x="90" y="476" class="m-note">公開（全會友）</text>
       <rect x="230" y="464" width="14" height="14" rx="3" fill="#b8893a"/><text x="250" y="476" class="m-note">半公開（按需面交）</text>
       <rect x="430" y="464" width="14" height="14" rx="3" fill="#3b5a78"/><text x="450" y="476" class="m-note">登入限定（陪跑者／牧長）</text>
-      <rect x="660" y="464" width="14" height="14" rx="3" fill="#37433d"/><text x="680" y="476" class="m-note">治理 · 設計</text>
+      <rect x="660" y="464" width="14" height="14" rx="3" fill="#37433d"/><text x="680" y="476" class="m-note">設計 · 治理</text>
 
-      <text x="70" y="512" class="m-note">互聯關係：治理／設計為「真相來源」，向下供應對外選召與陪跑者同行兩視角；</text>
-      <text x="70" y="530" class="m-note">對外選召的新領袖，加入授權名單後即進入同行視角。虛線框＝尚待牧長拍板的項目。</text>
+      <text x="70" y="512" class="m-note">互聯關係：設計／治理為「真相來源」，向下供應對外公開層與陪跑者園地兩層；</text>
+      <text x="70" y="530" class="m-note">對外受召的新領袖，加入授權名單後即進入陪跑。虛線框＝尚待牧長拍板的項目。</text>
     </svg>
   </div>
   <p class="mapcap">同一套真相，三種揭露深度——這正是體系「分層披露」原則的視覺化。</p>
 </section>
-
-<!-- ══ TOOL VALUE × PRIVACY ══ -->
-<section>
-  <p class="sec-eyebrow">省力，也安心</p>
-  <h2 class="sec-h">輔助工具的效率 × 隱私資安的權控</h2>
-  <p class="sec-sub">工具替陪跑者扛起繁瑣，把時間還給陪伴；同時以分層權控，守住高度個人的屬靈資料。</p>
-  <div class="statwrap">
-    <div class="statbox live">
-      <h3>🛠 輔助工具 · 陪跑考核效率</h3>
-      <ul>
-        <li>繁瑣的整理、計算、留底，工具一手接下——把時間還給陪伴與判斷</li>
-        <li>四維度 × 六個月成果，逐月記錄、自動彙整為報表</li>
-        <li>每次儲存都留底（append-only），歷次紀錄不覆蓋、可回溯</li>
-        <li>一鍵下載 PDF（自動以受考核者姓名＋時間命名），存檔交接都方便</li>
-        <li>行動優先：手機即可填寫，服事現場不必回到桌機</li>
-      </ul>
-    </div>
-    <div class="statbox pend">
-      <h3>🔒 隱私資安 · 權控概要</h3>
-      <ul>
-        <li>需 Google 登入 ＋ 授權名單方可進入，逐人控管</li>
-        <li>敏感欄位伺服器端遮罩：陪跑者只見自己所帶候選人的完整內容，他人僅見基本資料；區牧／牧長綜覽全部</li>
-        <li>奉獻、靈修、生命成熟度等高度個人屬靈資料，以權控保護，不公開、不外流</li>
-        <li>稽核軌跡：每次儲存自動記錄操作者與時間</li>
-        <li>資料庫私有：不開公開連結，金鑰僅存伺服器端，不寫入任何前端或網站原始碼</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ══ HOW IT'S BUILT ══ -->
-<section>
-  <p class="sec-eyebrow">值得一提</p>
-  <h2 class="sec-h">它是怎麼被建起來的</h2>
-  <div class="how">
-    <span class="badge">建造過程</span>
-    <p>這套體系——從治理文件、牧養手冊，到已上線的考核工具與網站——是透過一個 <b>由 AI 編排、有治理把關的流程</b> 設計與建造的。它不是「一個人關起門寫」，而是一個有角色分工、有審查閘門的協作體系。</p>
-    <p>每一份產出都要先通過 <b>神學與治理審查</b>，再經統籌對照「憲章」覆核，才能進入權威檔案（canon）。這讓速度與嚴謹得以並存：神學立場不被工程便利稀釋，紅線不被效率壓力跨越。</p>
-    <div class="steps">
-      <div class="step"><div class="si">✍️</div><h4>分工協作</h4><p>文件編修、神學治理審查、工程、受眾溝通各司其職，互不越界。</p></div>
-      <div class="step"><div class="si">🛡️</div><h4>審查閘門</h4><p>未過審的留在工作區；通過審查的才進入權威檔案。</p></div>
-      <div class="step"><div class="si">📜</div><h4>憲章為本</h4><p>六原則與紅線寫成專案憲法，任何產出都須對齊。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ STATUS ══ -->
-<section>
-  <p class="sec-eyebrow">誠實的進度</p>
-  <h2 class="sec-h">現在到了哪裡</h2>
-  <p class="sec-sub">這是一份活的體系，隨教會的牧養現場持續迭代。</p>
-  <div class="statwrap">
-    <div class="statbox live">
-      <h3>已上線運作</h3>
-      <ul>
-        <li>對外呼召網站（①②）已部署，可發放</li>
-        <li>轉正考核工具已上線：遮罩、授權、稽核齊備</li>
-        <li>陪跑者園地知識庫（含⑥手冊）已上線</li>
-        <li>③ 職份畫像已產出，供領袖按需面交</li>
-      </ul>
-    </div>
-    <div class="statbox pend">
-      <h3>進行中 · 待定案</h3>
-      <ul>
-        <li>培育框架⑤、考核判準等，待牧長正式背書</li>
-        <li>輔導手冊危機處理章，待牧長定調問責流程</li>
-        <li>體系正於本區試行，蒐集服事同工的回饋</li>
-        <li>羊群認可的收集方式，待牧長拍板</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CLOSING ══ -->
-<div class="closing">
-  <p>把成熟的同工託付為建造者，<br>讓停滯的被重新看見，<br>使體系能自我繁殖。</p>
-  <p class="cv">「揀選的依據是忠心，與能教導別人的能力——而非完成了什麼課程。」</p>
-</div>
 
 <p class="foot">
   飛航事工 · 領袖建造體系 ｜ 體系導覽（公開層）<br>
