@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>飛航福音中心 AI 小幫手 — 試行說明</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#23302c;--muted:#66736e;--paper:#f7f4ec;--white:#fff;
+      --pine:#1f3d36;--pine2:#2d544b;--green:#2d6a4f;
+      --gold:#b8893a;--gold2:#d9b873;--blue:#3b5a78;
+      --line:#d9d0bd;--cream:#f3ead6;--soft:#f8f6f0;--warn:#9a672c;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif}
+    body{padding:18px}
+    .board{width:min(1480px,100%);min-height:calc(100vh - 36px);margin:auto;background:var(--white);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 55px rgba(35,48,44,.12);display:grid;grid-template-rows:auto auto 1fr auto}
+    header{padding:26px 34px 22px;background:linear-gradient(125deg,var(--pine),#294a43 68%,#365c52);color:#fff;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+    .eyebrow{font-size:.72rem;letter-spacing:.28em;color:var(--gold2);font-weight:700;margin:0 0 7px}
+    h1{font-size:clamp(1.8rem,3vw,2.75rem);line-height:1.13;margin:0;font-weight:900;letter-spacing:.02em}
+    .subtitle{margin:9px 0 0;color:rgba(255,255,255,.84);font-size:clamp(.88rem,1.25vw,1.05rem);line-height:1.55;max-width:780px}
+    .status{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:430px}
+    .pill{border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:6px 11px;font-size:.72rem;font-weight:700;white-space:nowrap;background:rgba(255,255,255,.08)}
+    .pill.live{background:var(--gold2);color:#2e250f;border-color:var(--gold2)}
+
+    .problem{padding:17px 28px 14px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbf9f3)}
+    .problem h2{margin:0 0 8px;font-size:1.05rem;color:var(--pine);font-weight:900}
+    .problem-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;align-items:stretch}
+    .statement{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:#fff}
+    .statement b{color:var(--pine);font-weight:900}
+    .statement p{margin:0;color:var(--muted);font-size:.83rem;line-height:1.65}
+    .guardrails{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .guard{border-radius:13px;padding:11px 12px;background:var(--cream);border:1px solid #e4d2ac;min-height:74px}
+    .guard b{display:block;color:#72521e;font-size:.78rem;margin-bottom:3px}
+    .guard small{display:block;color:#6f6759;font-size:.67rem;line-height:1.45}
+
+    main{padding:16px 28px 18px;display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;min-height:0}
+    .panel{border:1px solid var(--line);border-radius:16px;padding:15px 16px;background:#fff}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px}
+    .panel h2{font-size:1rem;margin:0;color:var(--pine);font-weight:900}
+    .panel-tag{font-size:.65rem;color:var(--muted);font-weight:700}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .card{border-radius:12px;padding:10px 11px;background:var(--soft);border:1px solid #e7dfcf;min-height:82px}
+    .card b{display:block;font-size:.78rem;color:var(--pine);margin-bottom:4px}
+    .card small{display:block;font-size:.67rem;line-height:1.48;color:var(--muted)}
+    .card .state{margin-top:6px;color:var(--green);font-weight:900;font-size:.61rem;letter-spacing:.04em}
+    .card.warn .state{color:var(--warn)}
+
+    .layers{display:grid;grid-template-columns:1fr;gap:8px}
+    .layer{display:grid;grid-template-columns:116px 1fr;gap:10px;align-items:start;border:1px solid var(--line);border-radius:12px;padding:10px 11px;background:#fff}
+    .layer .label{font-size:.7rem;color:#fff;background:var(--blue);border-radius:999px;padding:4px 9px;font-weight:900;text-align:center}
+    .layer.core .label{background:var(--pine)}
+    .layer.fact .label{background:var(--green)}
+    .layer.season .label{background:var(--gold)}
+    .layer p{margin:0;color:var(--muted);font-size:.72rem;line-height:1.5}
+    .layer b{color:var(--ink)}
+
+    .qa{margin-top:10px;border-radius:13px;padding:11px 12px;background:#edf3ef;border:1px solid #cbd9d1}
+    .qa b{display:block;color:var(--pine);font-size:.78rem;margin-bottom:4px}
+    .qa p{margin:0;color:var(--muted);font-size:.7rem;line-height:1.5}
+
+    footer{padding:12px 28px;background:#eee8da;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .now{font-size:.73rem;line-height:1.45;color:var(--ink);font-weight:700}
+    .now b{color:var(--pastor, #2d6a4f)}
+    .closing{font-size:.68rem;color:var(--muted);text-align:right;white-space:nowrap}
+
+    @media(max-width:980px){
+      body{padding:0}.board{border:0;border-radius:0;min-height:100vh}
+      header{align-items:flex-start;flex-direction:column}.status{justify-content:flex-start}
+      .problem-grid,main{grid-template-columns:1fr}.guardrails,.cards{grid-template-columns:1fr 1fr}
+      footer{align-items:flex-start;flex-direction:column}.closing{text-align:left;white-space:normal}
+    }
+    @media(max-width:620px){
+      header{padding:22px 18px 18px;gap:15px}h1{font-size:1.7rem}.subtitle{font-size:.88rem}
+      .status{display:grid;grid-template-columns:1fr 1fr;width:100%}.pill{text-align:center;white-space:normal}.pill:first-child{grid-column:1/-1}
+      .problem,main{padding-left:15px;padding-right:15px}.guardrails,.cards{grid-template-columns:1fr}
+      .layer{grid-template-columns:1fr}.layer .label{text-align:left;width:max-content}
+      .card b{font-size:.88rem}.card small,.layer p,.qa p,.statement p{font-size:.8rem;line-height:1.55}
+      footer{padding:14px 16px}.now,.closing{font-size:.76rem}
+    }
+    @media print{
+      @page{size:A4 landscape;margin:7mm}
+      body{padding:0;background:#fff}.board{width:100%;min-height:auto;border:0;border-radius:0;box-shadow:none}
+      header{padding:16px 24px}.problem{padding:12px 20px}main{padding:12px 20px;gap:12px}.panel{padding:11px}.card{min-height:0}footer{padding:8px 20px}
+    }
+  </style>
+</head>
+<body>
+<div class="board">
+  <header>
+    <div>
+      <p class="eyebrow">飛航福音中心 · AI 小幫手重建試行</p>
+      <h1>讓新朋友、會友與同工<br>更快找到正確入口</h1>
+      <p class="subtitle">新朋友想知道聚會時間，會友想確認奉獻與晨禱，同工希望少一點重複回答；甚至路過青埔的街坊，也可能只是想知道「這裡是什麼地方」。小幫手的價值很簡單：把已確認的公開資訊先接住，把易變的問題清楚導回同工確認。</p>
+    </div>
+    <div class="status" aria-label="目前狀態">
+      <span class="pill live">2025 舊小幫手已重建</span>
+      <span class="pill">Messenger／LINE bot 尚未啟用</span>
+      <span class="pill">高峰會後決定是否擴大</span>
+    </div>
+  </header>
+
+  <section class="problem" aria-labelledby="why-heading">
+    <h2 id="why-heading">這次重建，重點不只是把小幫手打開</h2>
+    <div class="problem-grid">
+      <div class="statement">
+        <p><b>2025 年 12 月已有舊版小幫手；這次是重新整理、刪除過期內容，放進與小家長領袖建造體系同樣嚴謹的治理邏輯。</b> 最大修正是把季節活動先整段收起來：在同工與外展小組長還沒有固定更新流程前，AI 不應該替教會公布可能過期或未確認的活動。</p>
+      </div>
+      <div class="guardrails" aria-label="治理守則">
+        <div class="guard"><b>刪掉過期季節活動</b><small>目前只導向粉專、LINE 群組或電話確認，不由小幫手自己列活動。</small></div>
+        <div class="guard"><b>留下可確認資訊</b><small>主日、地址電話、晨禱、奉獻入口、社群粉專等先穩定可用。</small></div>
+        <div class="guard"><b>同工流程先到位</b><small>未來活動資訊需要同工／外展小組長固定提供、固定更新。</small></div>
+        <div class="guard"><b>渠道不急著開</b><small>Messenger 與 LINE bot 有好處也有風險，治理未清楚前先不啟用。</small></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="panel" aria-labelledby="can-heading">
+      <div class="panel-head"><h2 id="can-heading">現在對大家有什麼幫助？</h2><span class="panel-tag">先接住常見公開問題</span></div>
+      <div class="cards">
+        <div class="card"><b>新朋友</b><small>快速知道主日時間、地址電話、這裡和卓越行道會的關係。</small><div class="state">降低第一次接觸門檻</div></div>
+        <div class="card"><b>會友</b><small>確認晨禱、奉獻入口、社群粉專與常見資訊，不必到處翻訊息。</small><div class="state">減少資訊摩擦</div></div>
+        <div class="card"><b>同工</b><small>重複性問題先由小幫手承接，真正需要判斷的再回到同工。</small><div class="state">保留人力給牧養</div></div>
+        <div class="card"><b>街坊與路過者</b><small>對飛航福音中心好奇時，能先找到公開、友善、基本的入口。</small><div class="state">留下好的第一印象</div></div>
+        <div class="card warn"><b>活動資訊</b><small>目前不列日期型活動；先導向外展粉專、既有 LINE 群組或電話確認。</small><div class="state">先保守，不亂答</div></div>
+        <div class="card warn"><b>愛宴／講道／奉獻細節</b><small>可說明大方向；遇到費用、週次、特殊安排或金流細節，請向同工確認。</small><div class="state">該人工就人工</div></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="govern-heading">
+      <div class="panel-head"><h2 id="govern-heading">下一步若要擴大，需要先補什麼？</h2><span class="panel-tag">點到為止 · 不急著擴張</span></div>
+      <div class="layers">
+        <div class="layer season"><div class="label">活動格式</div><p><b>季節活動要能被管理，才適合交給小幫手回答。</b> 未來可用固定表格，由同工／外展小組長填寫活動名稱、地點、時間、簡短說明、海報與報名連結，並設定下架時間。</p></div>
+        <div class="layer fact"><div class="label">每月替換</div><p><b>活動不是一次放上去就結束。</b> 需要簡單流程：誰提供、誰確認、何時更新、過期後誰移除。流程不到位時，保守導向粉專與人工確認比較安全。</p></div>
+        <div class="layer core"><div class="label">付費方案</div><p><b>若高峰會後真的帶來使用量，免費方案可能不夠。</b> 到時需要評估 Botpress 付費方案、流量、保存紀錄與管理權限。參考：<a href="https://botpress.com/pricing" target="_blank" rel="noopener">Botpress 方案頁</a>。</p></div>
+        <div class="layer"><div class="label">渠道整合</div><p><b>好處：</b>會友可在 Messenger／LINE 直接問。<b>風險：</b>權限、隱私、誤答、人工接手與停用機制都要先講清楚。因此目前只做網頁版試行，不急著接社群渠道。</p></div>
+      </div>
+      <div class="qa">
+        <b>目前只需要看懂一件事</b>
+        <p>這個小幫手不是另一個大型系統，而是把 2025 舊版重新整理後，先用治理守住低風險公共資訊。若大家覺得值得推進，再決定活動資料流程、渠道整合與方案預算。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="now"><b>現在的位置：</b>舊版小幫手已重建為網頁試行版；尚未啟用 Messenger／LINE bot；目前不列任何未核准日期型活動。</div>
+    <div class="closing">核心目的：<strong>讓人更容易找到入口，讓資訊不亂跑。</strong></div>
+  </footer>
+</div>
+</body>
+</html>
